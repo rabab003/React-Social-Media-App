@@ -1,10 +1,11 @@
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import Topbar from '../../Components/Topbar/Topbar';
 
 export default function Home(){
     return(
         <div>
-            <h2>hello</h2>
-            <HomeRoundedIcon/>
+            this is home
+            <Topbar/>
 
         </div>
     )

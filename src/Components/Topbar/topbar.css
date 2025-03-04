@@ -1,0 +1,7 @@
+import "/src/Components/topbar"
+
+export default function Topbar(){
+    return(
+        <></>
+    )
+} 
