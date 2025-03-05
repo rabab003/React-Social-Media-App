@@ -67,13 +67,13 @@
   justify-content: center;
   align-items: center;
   width: 20px;
-  hieght: 20px;
-  /* padding: ; */
+  height: 20px;
   background: red;
   border-radius: 50%;
   color: White;
   position: absolute;
-  top: -8px;
+  top: -12px;
+  right: -8px;
   font-size: 15px;
 }
 
