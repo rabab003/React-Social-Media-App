@@ -1,8 +1,10 @@
 import "./Post.css";
 import { MoreVert } from "@mui/icons-material"; 
- 
+ import { Users } from "../../dummyData";
 
-export default function Post({Post}){
+export default function Post({post}){
+    const user = Users.filter(u=>u.id ===1)
+    console.log(user)
     return(
         <>
         <div className="post">
@@ -10,8 +12,8 @@ export default function Post({Post}){
                 <div className="postTop">
                     <div className="postTopLeft">
                         <img src="/public/assets/person/1.jpeg" className="postProfileImg" alt="" />
-                        <span className="postUsername">rabix-01</span>
-                        <span className="postDate">{Post.date} min ago</span>
+                        <span className="postUsername">{post.id}</span>
+                        <span className="postDate">{post?.date} min ago</span>
                     </div>
                     <div className="postTopRight">
                         <MoreVert/>
@@ -19,18 +21,18 @@ export default function Post({Post}){
 
                 </div>
                 <div className="postCenter">
-                    <span className="postText">ddd</span>
-                    <img className="postImg" src="/public/assets/post/1.jpeg" alt="" />
+                    <span className="postText">{post.desc}</span>
+                    <img className="postImg" src={post.photo} alt="" />
 
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
                         <img src="/public/assets/like.png" className="likeIcon" alt="" />
                         <img src="/public/assets/heart.png" className="likeIcon" alt="" />
-                        <span className="postLikeCounter">32 people like it</span>
+                        <span className="postLikeCounter">{post.like} people like it</span>
                     </div>
                     <div className="postBottomRight">
-                    <span className="postCommentText">9 comments</span>
+                    <span className="postCommentText">{post.comment} comments</span>
 
                     </div>
 
@@ -44,3 +46,5 @@ export default function Post({Post}){
         </>
     )
 }
+
+// 1:29:19 min
