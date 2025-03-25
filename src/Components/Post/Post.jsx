@@ -1,18 +1,28 @@
 import "./Post.css";
 import { MoreVert } from "@mui/icons-material"; 
  import { Users } from "../../dummyData";
+import { useState } from "react";
 
 export default function Post({post}){
-    const user = Users.filter(u=>u.id ===1)
-    console.log(user)
+    const [like, setLike] = useState(post.like)
+    const [isLiked, setIsLiked] = useState(false)
+
+    const likeHandler =()=>{
+        setLike(isLiked? like-1 : like+1);
+        setIsLiked(!isLiked)
+    }
     return(
         <>
         <div className="post">
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="postTopLeft">
-                        <img src="/public/assets/person/1.jpeg" className="postProfileImg" alt="" />
-                        <span className="postUsername">{post.id}</span>
+                        <img src={Users.filter((u)=> u.id=== post?.userId)[0].profilePicture} className="postProfileImg" alt="" />
+                       
+                        <span className="postUsername">
+                     {Users.filter((u)=> u.id === post.userId)[0].profilePicture}
+
+                        </span>
                         <span className="postDate">{post?.date} min ago</span>
                     </div>
                     <div className="postTopRight">
@@ -27,8 +37,8 @@ export default function Post({post}){
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <img src="/public/assets/like.png" className="likeIcon" alt="" />
-                        <img src="/public/assets/heart.png" className="likeIcon" alt="" />
+                        <img src="/public/assets/like.png" className="likeIcon" onClick={likeHandler} />
+                        <img src="/public/assets/heart.png" className="likeIcon" onClick={likeHandler} alt="" />
                         <span className="postLikeCounter">{post.like} people like it</span>
                     </div>
                     <div className="postBottomRight">
@@ -47,4 +57,4 @@ export default function Post({post}){
     )
 }
 
-// 1:29:19 min
+// 1:42:30 profile page section
