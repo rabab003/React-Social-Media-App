@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './Pages/Home/Home';
+import profile from './Components/Profile/profile';
 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
     <>
     <div>
       
-      <Home/>
+      <profile/>
 
     </div>
 
